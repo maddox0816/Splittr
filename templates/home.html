@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splittr - Effortless Expense Sharing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #020617; /* slate-950 */
+        }
+        .gradient-text {
+            background-image: linear-gradient(to right, #818cf8, #38bdf8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="text-slate-200">
+
+    <!-- Header -->
+    <header class="absolute top-0 left-0 w-full z-10 py-6 px-4">
+        <div class="container mx-auto max-w-6xl flex justify-between items-center">
+            <h1 class="text-2xl font-bold gradient-text">Splittr</h1>
+            <a href="/login" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2 px-5 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                Login
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="relative isolate overflow-hidden">
+        <div class="absolute inset-0 bg-slate-900/50 backdrop-blur-sm z-0"></div>
+        <div class="absolute -top-48 left-1/2 -z-10 -translate-x-1/2 transform-gpu blur-3xl" aria-hidden="true">
+            <div class="aspect-[1108/632] w-[69.25rem] bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-20" style="clip-path: polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64.3%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 1.4% 98.3%, 17.4% 92.5%, 27.5% 78.7%, 76.5% 97.2%, 73.6% 51.7%)"></div>
+        </div>
+        <div class="mx-auto max-w-6xl px-6 lg:px-8 py-32 sm:py-48 lg:py-56 text-center relative z-10">
+            <h1 class="text-4xl font-black tracking-tight text-white sm:text-6xl">
+                Stop chasing payments.
+                <br>
+                Start <span class="gradient-text">Splitting</span>.
+            </h1>
+            <p class="mt-6 text-lg leading-8 text-slate-300 max-w-2xl mx-auto">
+                From dinners out to group trips, Splittr is the simplest way to track shared expenses with friends. No more awkward conversations, just clear balances and easy settlements.
+            </p>
+            <div class="mt-10 flex items-center justify-center gap-x-6">
+                <a href="/login" class="rounded-md bg-indigo-600 px-6 py-3 text-lg font-semibold text-white shadow-lg hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-transform transform hover:scale-105">Get Started</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Features Section -->
+    <section class="bg-slate-900 py-24 sm:py-32">
+        <div class="mx-auto max-w-6xl px-6 lg:px-8">
+            <div class="mx-auto max-w-2xl lg:text-center">
+                <h2 class="text-base font-semibold leading-7 text-indigo-400">Everything You Need</h2>
+                <p class="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">The Ultimate IOU Tracker</p>
+                <p class="mt-6 text-lg leading-8 text-slate-300">
+                    We built Splittr with one goal: to make sharing costs as painless as possible. Here's how we do it.
+                </p>
+            </div>
+            <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+                <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+                    <!-- Feature 1 -->
+                    <div class="flex flex-col items-center text-center lg:items-start lg:text-left">
+                        <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-white">
+                            <svg class="h-6 w-6 text-indigo-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            Connect with Friends
+                        </dt>
+                        <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-slate-300">
+                            <p class="flex-auto">Find and add your friends using their Venmo username. Send requests, build your circle, and keep everyone in one place.</p>
+                        </dd>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="flex flex-col items-center text-center lg:items-start lg:text-left">
+                        <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-white">
+                            <svg class="h-6 w-6 text-indigo-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2Z"/><path d="M16.2 7.8 11.4 12l4.8 4.2"/><path d="M8 12h3"/></svg>
+                            Flexible Expense Splitting
+                        </dt>
+                        <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-slate-300">
+                            <p class="flex-auto">Log an expense and split it with multiple friends at once. Choose to split the cost evenly or enter custom amounts for complete control.</p>
+                        </dd>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="flex flex-col items-center text-center lg:items-start lg:text-left">
+                        <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-white">
+                            <svg class="h-6 w-6 text-indigo-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16-4-4 4-4"/><path d="m8 16-4-4 4-4"/><path d="M12 2v20"/></svg>
+                            Clear, Real-Time Balances
+                        </dt>
+                        <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-slate-300">
+                            <p class="flex-auto">Your dashboard gives you a live, at-a-glance view of who owes who. Green means they owe you, red means you owe them. Simple.</p>
+                        </dd>
+                    </div>
+
+                     <!-- Feature 4 -->
+                     <div class="flex flex-col items-center text-center lg:items-start lg:text-left">
+                        <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-white">
+                            <svg class="h-6 w-6 text-indigo-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5L17 21l-5-5Z"/><path d="m11 11 5 5"/></svg>
+                            Partial & Full Settlements
+                        </dt>
+                        <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-slate-300">
+                            <p class="flex-auto">Record payments with ease. Log the exact amount a friend paid you, whether it's the full balance or just a partial payment, and watch the numbers update instantly.</p>
+                        </dd>
+                    </div>
+
+                    <!-- Feature 5 -->
+                    <div class="flex flex-col items-center text-center lg:items-start lg:text-left">
+                        <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-white">
+                            <svg class="h-6 w-6 text-indigo-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
+                            Detailed History
+                        </dt>
+                        <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-slate-300">
+                            <p class="flex-auto">Never forget who paid for what. Every expense and settlement is recorded, giving you a complete history of your shared costs.</p>
+                        </dd>
+                    </div>
+
+                    <!-- Feature 6 -->
+                    <div class="flex flex-col items-center text-center lg:items-start lg:text-left">
+                        <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-white">
+                            <svg class="h-6 w-6 text-indigo-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.73 18a2.73 2.73 0 0 1-3.85 3.85l-1.42-1.42a2.73 2.73 0 0 1 3.85-3.85Z"/><path d="M1.42 2.58a2.73 2.73 0 0 0 3.85 3.85l1.42 1.42a2.73 2.73 0 0 0-3.85-3.85Z"/><path d="m12 12-2-2 4-4 2 2-4 4Z"/><path d="M9.03 11.97 12 15l-3 3-1.42-1.42a2.73 2.73 0 0 1 0-3.85L9.03 11.97Z"/><path d="M14.97 8.97 12 6l3-3 1.42 1.42a2.73 2.73 0 0 1 0 3.85L14.97 8.97Z"/></svg>
+                            Secure & Private
+                        </dt>
+                        <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-slate-300">
+                            <p class="flex-auto">Your account and financial data are yours alone. Sign up for a secure account and manage your expenses with peace of mind.</p>
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950">
+        <div class="mx-auto max-w-7xl overflow-hidden px-6 py-12 lg:px-8">
+            <p class="text-center text-xs leading-5 text-slate-400">
+                &copy; 2024 Splittr. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
