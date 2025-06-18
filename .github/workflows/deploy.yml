@@ -1,0 +1,50 @@
+# .github/workflows/deploy.yml
+# This GitHub Actions workflow will trigger on pushes to the 'main' branch.
+# It uses a self-hosted runner to build and deploy the Dockerized Flask application
+# directly on your server, without needing inbound SSH access.
+
+name: Deploy Flask App with Self-Hosted Runner
+
+on:
+  push:
+    branches:
+      - main # Trigger this workflow on pushes to the main branch
+
+jobs:
+  deploy:
+    # IMPORTANT: 'self-hosted' label tells GitHub Actions to use your own runner.
+    # If you assigned a specific label to your runner, use that here (e.g., runs-on: my-server-runner)
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout code
+        # This action checks out your repository code onto the self-hosted runner.
+        uses: actions/checkout@v4
+
+      - name: Stop and remove old Docker container
+        # Ensure that any existing container is stopped and removed.
+        # The '|| true' allows the command to succeed even if the container doesn't exist,
+        # preventing the workflow from failing unnecessarily.
+        run: |
+          docker stop my-flask-app-container || true
+          docker rm my-flask-app-container || true
+        # Make sure 'my-flask-app-container' matches the name you use for your container.
+
+      - name: Build new Docker image
+        # Build the Docker image from your Dockerfile in the current directory (your repo root).
+        # -t tags the image with the specified name.
+        run: docker build -t my-flask-app-image .
+        # Make sure 'my-flask-app-image' matches the name you use for your image.
+
+      - name: Run new Docker container
+        # Run the new Docker image as a detached container.
+        # --name: Assigns a name to the container for easy management.
+        # -p: Maps a host port to a container port. Adjust 127.0.0.1:8000:5000 as needed.
+        #   - 127.0.0.1: This is the HOST_IP you want to bind to (e.g., '0.0.0.0' for all interfaces).
+        #   - 8000: This is the HOST_PORT you want Nginx Proxy Manager to forward to.
+        #   - 5000: This is the FLASK_APP_PORT your Flask app listens on inside the container.
+        run: docker run -d --name my-flask-app-container -p 127.0.0.1:8000:5000 my-flask-app-image
+        # Ensure the ports and names match your configuration in webhook_listener.py (or your desired config).
+
+      - name: Deployment complete
+        run: echo "Flask app deployed successfully!"
